@@ -1,6 +1,3 @@
-import time
-
-import pyperclip
 from constants import *
 from grid import Grid
 

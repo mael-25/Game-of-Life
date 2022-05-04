@@ -1,6 +1,4 @@
 import random
-import time
-from typing import Tuple
 from constants import *
 import pygame
 from pygame.locals import *
@@ -24,7 +22,7 @@ class Grid:
         pygame.display.set_caption("Game of Life") # tell pygame to name the screen "Game Of Life"
         self.grid = [[ 0 for _ in range(w)] for _ in range(h)]
         self.generation = 0
-        self.size: Tuple[int, int] = w,h
+        self.size: tuple[int, int] = w,h
         self.screen = pygame.display.set_mode((w*TILEWIDTH, h*TILEHEIGHT)) # size of the game
         pygame.Surface.fill(self.screen, (255,255,255))
         pygame.display.update()
