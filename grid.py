@@ -25,7 +25,6 @@ class Grid:
                 if x != 0 or y != 0:
                     if index[0]+y >= 0 and index[1]+x >= 0 and \
                        index[0]+y < NROWS and index[1]+x < NCOLS: 
-                        # print(index[0]+y, index[1]+x)
                         rv.append(self.grid[index[0]+y][index[1]+x])
                     else: pass
 
@@ -43,15 +42,10 @@ class Grid:
                         nextGeneration[y][x] = 1
                     else: 
                         nextGeneration[y][x] = 0
-            # rv2 = [y for x in self.grid for y in x ]
             self.generation += 1
             self.grid = nextGeneration
-            # print(self.clock.get_time())
             self.clock.tick(1000/self.pauseTime)
-            # return self.grid
         if draw: self.draw()
-
-        # pygame.display.update()
                 
     def startingGrid(self, cells:list|tuple, randomGrid:bool=False, usePygame:bool=True):
         if not usePygame:
@@ -94,7 +88,6 @@ class Grid:
                         # tmp[posy][posx] = 1-tmp[posy][posx]
                         changes = True
                 if changes: self.draw(False, False)#;print(1)
-                # pygame.display.update()
 
     def draw(self, showGeneration:bool=True, showIsScreenBlanc=True, isStarting=False):
         for event in pygame.event.get():
