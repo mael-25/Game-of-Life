@@ -3,18 +3,6 @@ from constants import *
 import pygame
 from pygame.locals import *
 
-# class Square:
-#     def __init__(self, isCell:bool=True):
-#         self.isCell = isCell
-#         self.color = BLACK if self.isCell else WHITE
-
-#     def changeIsCell(self, changeValue:bool):
-#         self.isCell = changeValue
-#         self.color = BLACK if self.isCell else WHITE
-
-#     def __str__(self) -> str:
-#         return " " if not self.isCell else "█"
-
 
 class Grid:
     def __init__(self, w, h, pauseTime=100) -> None:
@@ -66,11 +54,6 @@ class Grid:
         # pygame.display.update()
                 
     def startingGrid(self, cells:list|tuple, randomGrid:bool=False, usePygame:bool=True):
-        # for x in cells:
-        #     y = self.grid[x[0]]
-        #     # print(y)
-        #     # print(x[1])
-        #     y[x[1]] = 1
         if not usePygame:
             if randomGrid:
                 lst = [[y, x] for y in range(self.size[0]) for x in range(self.size[0])]
@@ -120,17 +103,16 @@ class Grid:
             if event.type == KEYDOWN:
                 if event.key == K_SPACE and not isStarting:
                     self.pause = 1- self.pause
-                    # time.sleep(1)
 
-                # print(1)
+        
                 if event.key == K_RIGHT :
-                    # print(1)
+              
                     if self.pause == 1 :
-                        # print(1)
+                       
                         if not isStarting:
-                            # print(1)
+                      
                             self.update(False, True)
-                            # print("HELLO")
+                       
 
                 if event.key == K_ESCAPE:
                     pass
